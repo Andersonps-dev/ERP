@@ -2,7 +2,7 @@ from rest_framework.exceptions import AuthenticationFailed, APIException
 from django.contrib.auth.hashers import make_password, check_password
 from accounts.models import User
 
-from companies.models import Enterprise
+from companies.models import Enterprise, Employee
 
 class AuthenticationFailed:
     def signin(self, email=None, password=None) -> User:
@@ -48,6 +48,15 @@ class AuthenticationFailed:
         )
 
         if type_account == 'owner':
-            Enterprise.objects.create(
-                name=''
+            created_enterprise = Enterprise.objects.create(
+                name='Nome da empresa',
+                user_id=created_user.id
             )
+        
+        if type_account == 'employee':
+            Employee.objects.create(
+                enterprise_id = company_id or created_enterprise,
+                user_id=created_user.id
+            )
+        
+        return created_user

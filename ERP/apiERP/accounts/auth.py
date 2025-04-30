@@ -4,7 +4,7 @@ from accounts.models import User
 
 from companies.models import Enterprise, Employee
 
-class AuthenticationFailed:
+class Authentication:
     def signin(self, email=None, password=None) -> User:
         exception_auth = AuthenticationFailed('Email e/ou senha incorreto(s).')
 

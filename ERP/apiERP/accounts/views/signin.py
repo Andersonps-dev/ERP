@@ -21,6 +21,6 @@ class Signin(Base):
         return Response({
             "user": serializer.data,
             "enterprise": enterprise,
-            "refresh": token.refresh,
-            "acesss": token.access_token,
+            "refresh": str(token),
+            "acesss": str(token.access_token),
         })

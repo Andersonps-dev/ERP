@@ -22,16 +22,16 @@ class Authentication:
     
     def signup(self, name, email, password, type_account='owner', company_id=False) -> None:
         if not name or name == '':
-            raise APIException('O campo "name" é obrigatório.')
+            raise APIException('O campo name é obrigatório.')
         
         if not email or email == '':
-            raise APIException('O campo "email" é obrigatório.')
+            raise APIException('O campo email é obrigatório.')
         
         if not password or password == '':
-            raise APIException('O campo "password" é obrigatório.')
+            raise APIException('O campo password é obrigatório.')
         
         if type_account == 'employee' and not company_id:
-            raise APIException('O campo "company_id" é obrigatório.')
+            raise APIException('O campo company_id é obrigatório.')
         
         user = User
         

@@ -1,6 +1,6 @@
 from accounts.views.base import Base
 from accounts.auth import Authentication
-from serializers import UserSerializer
+from accounts.serializers import UserSerializer
 
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken

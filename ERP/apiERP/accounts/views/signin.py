@@ -10,8 +10,6 @@ class Signin(Base):
         email = request.data.get("email")
         password = request.data.get("password")
 
-        print(email, password)
-
         user = Authentication.signin(self, email=email, password=password)
 
         token = RefreshToken.for_user(user)

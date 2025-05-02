@@ -3,7 +3,6 @@ from accounts.auth import Authentication
 from accounts.serializers import UserSerializer
 from rest_framework.response import Response
 
-
 class Signup(Base):
     def post(self, request):
         name = request.data.get("name")

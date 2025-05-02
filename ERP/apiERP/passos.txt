@@ -1,0 +1,5 @@
+Criação dos models
+Criação do auth.py - para autenticar o usuario no login e para validar o cadastro do usuario com regras de negocio
+Criação do serializers - converter um model em dados simples de json ou xml
+criação views signin - função para pegar o post e confrontar na função signin do auth.py e verifricar se bate, se bater retorna um json
+Criação views signup - pega o post joga para a função signup do auth.py e retona um json com info do usuario
